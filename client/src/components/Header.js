@@ -13,8 +13,14 @@ const StyledAppBar = styled(AppBar)({
   boxShadow: 'none'
 })
 
-const SearWrapper = Styled(Box)({
-
+const SearWrapper = styled(Box)({
+  background: '#EAF1FB',
+  marginLeft: 80,
+  borderRadius:8,
+  minWidth:690,
+  maxWidth:720,
+  height:48,
+ X
 })
 
 function Header() {
@@ -23,13 +29,17 @@ function Header() {
       <StyledAppBar position='static'>
         <Toolbar>
          <MenuIcon color='action'/>
-         <img src={gmailLogo} alt='logo' style={{ width:110, height:30, marginLeft:15}}/>
+         <Box display="flex">
+           <Box flexGrow={1}>
+             <img src={gmailLogo} alt='logo' style={{ width:110, height:30, marginLeft: 15}}/>
+           </Box>
+           <SearWrapper display="flex" sx={{ ml: 2 }}>
+             <SearchIcon color='action'/>
+             <InputBase />
+             <TuneIcon color='action' />
+           </SearWrapper>
+         </Box>
         </Toolbar>
-        <Box>
-          <SearchIcon color='action'/>
-          <InputBase />
-          <TuneIcon color='action' />
-        </Box>
       </StyledAppBar>
     </div>
   )
