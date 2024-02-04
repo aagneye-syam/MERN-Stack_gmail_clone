@@ -6,9 +6,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 function Header() {
   return (
     <div>
-      <AppBar position='static'>
+      <AppBar>
         <Toolbar>
-
+         <MenuIcon/>
         </Toolbar>
       </AppBar>
     </div>
