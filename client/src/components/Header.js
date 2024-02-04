@@ -6,11 +6,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { gmailLogo } from '../constants/constant';
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
-import { InputBase } from '@mui/material';
+import { InputBase,Box } from '@mui/material';
 
 const StyledAppBar = styled(AppBar)({
   background: '#F5F5F5',
   boxShadow: 'none'
+})
+
+const SearWrapper = Styled(Box)({
+
 })
 
 function Header() {
@@ -21,11 +25,11 @@ function Header() {
          <MenuIcon color='action'/>
          <img src={gmailLogo} alt='logo' style={{ width:110, height:30, marginLeft:15}}/>
         </Toolbar>
-        <div>
+        <Box>
           <SearchIcon color='action'/>
           <InputBase />
-          <TuneIcon />
-        </div>
+          <TuneIcon color='action' />
+        </Box>
       </StyledAppBar>
     </div>
   )
