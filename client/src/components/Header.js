@@ -20,7 +20,9 @@ const SearWrapper = styled(Box)({
   minWidth:690,
   maxWidth:720,
   height:48,
- X
+  display:'flex',
+  alignItems:'center',
+  justifyContent:'space-between'
 })
 
 function Header() {
