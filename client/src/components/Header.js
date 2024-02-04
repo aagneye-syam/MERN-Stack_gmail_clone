@@ -5,7 +5,8 @@ import styled from '@emotion/styled';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledAppBar = styled(AppBar)({
-  background: '#F5F5F5'
+  background: '#F5F5F5',
+  boxShadow: 'none'
 })
 
 function Header() {
@@ -13,7 +14,7 @@ function Header() {
     <div>
       <StyledAppBar position='static'>
         <Toolbar>
-         <MenuIcon/>
+         <MenuIcon color='action'/>
         </Toolbar>
       </StyledAppBar>
     </div>
