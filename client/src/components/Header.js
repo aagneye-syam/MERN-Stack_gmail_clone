@@ -23,7 +23,11 @@ const SearWrapper = styled(Box)({
   display:'flex',
   alignItems:'center',
   justifyContent:'space-between',
-  padding: '0 20px'
+  padding: '0 20px',
+  '& > div' : {
+    width: '100%',
+    padding: '0 5px'
+  }
 })
 
 function Header() {
@@ -34,11 +38,11 @@ function Header() {
          <MenuIcon color='action'/>
          <Box display="flex">
            <Box flexGrow={1}>
-             <img src={gmailLogo} alt='logo' style={{ width:110, height:30, marginLeft: 15}}/>
+             <img src={gmailLogo} alt='logo' style={{ width:110, height:30, marginLeft: 15,marginTop:9.5}}/>
            </Box>
            <SearWrapper display="flex" sx={{ ml: 2 }}>
              <SearchIcon color='action'/>
-             <InputBase />
+             <InputBase placeholder='Search mail'/>
              <TuneIcon color='action' />
            </SearWrapper>
          </Box>
