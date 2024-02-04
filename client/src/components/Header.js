@@ -20,7 +20,7 @@ const StyledAppBar = styled(AppBar)({
 const SearWrapper = styled(Box)({
   background: "#EAF1FB",
   marginLeft: 80,
-  borderRadius: 8,
+  borderRadius: 25,
   minWidth: 690,
   maxWidth: 720,
   height: 48,
@@ -37,7 +37,10 @@ const SearWrapper = styled(Box)({
 const IconWrapper = styled(Box)({
   width:'100%',
   display:'flex',
-  justifyContent:'end'
+  justifyContent:'end',
+  '& > svg' : {
+    marginLeft:20
+  }
 })
 
 function Header() {
