@@ -34,6 +34,12 @@ const SearWrapper = styled(Box)({
   },
 });
 
+const IconWrapper = styled(Box)({
+  width:'100%',
+  display:'flex',
+  justifyContent:'end'
+})
+
 function Header() {
   return (
     <div>
@@ -59,12 +65,12 @@ function Header() {
               <TuneIcon color="action" />
             </SearWrapper>
           </Box>
-          <div>
+          <IconWrapper>
             <HelpOutlineIcon color="action" />
             <SettingsIcon color="action" />
             <AppsIcon color="action" />
             <AccountCircleIcon color="action"  />
-          </div>
+          </IconWrapper>
         </Toolbar>
       </StyledAppBar>
     </div>
