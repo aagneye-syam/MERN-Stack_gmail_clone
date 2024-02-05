@@ -1,9 +1,12 @@
 import React from 'react'
+import { Drawer,styled } from '@mui/material';
 
 function Sidebar() {
   return (
     <div>
-      <h1>Hello form side bar</h1>
+      <Drawer>
+        
+      </Drawer>
     </div>
   )
 }
