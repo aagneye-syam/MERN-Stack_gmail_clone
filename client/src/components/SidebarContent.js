@@ -12,24 +12,23 @@ const ComposeButton = styled(Button)({
   textTransform: "none",
 });
 
-const Containter = styled(Box)({
+const Container = styled(Box)({
   padding: 8,
-  '& > ul': {
+  "& > ul": {
     padding: "10px 0 0 5px",
     fontSize: 14,
     fontWeight: 500,
-    cursor: 'pointer',
+    cursor: "pointer",
   },
-  '& > ul > li > svg' : {
-    marginRight : 20,
-  }
+  "& > ul > li > svg": {
+    marginRight: 20,
+  },
 });
-
 
 function SidebarContent() {
   return (
     <div>
-      <Containter>
+      <Container>
         <ComposeButton>
           <CreateOutlined style={{ paddingRight: "10px" }} />
           Compose
@@ -42,7 +41,7 @@ function SidebarContent() {
             </ListItem>
           ))}
         </List>
-      </Containter>
+      </Container>
     </div>
   );
 }

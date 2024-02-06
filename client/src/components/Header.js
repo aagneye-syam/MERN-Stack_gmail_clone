@@ -35,20 +35,20 @@ const SearWrapper = styled(Box)({
 });
 
 const IconWrapper = styled(Box)({
-  width:'100%',
-  display:'flex',
-  justifyContent:'end',
-  '& > svg' : {
-    marginLeft:20
-  }
-})
+  width: "100%",
+  display: "flex",
+  justifyContent: "end",
+  "& > svg": {
+    marginLeft: 20,
+  },
+});
 
-function Header() {
+function Header({ toggleDrawer }) {
   return (
     <div>
       <StyledAppBar position="static">
         <Toolbar>
-          <MenuIcon color="action" />
+          <MenuIcon color="action" onClick={toggleDrawer} />
           <Box display="flex">
             <Box flexGrow={1}>
               <img
@@ -72,7 +72,7 @@ function Header() {
             <HelpOutlineIcon color="action" />
             <SettingsIcon color="action" />
             <AppsIcon color="action" />
-            <AccountCircleIcon color="action"  />
+            <AccountCircleIcon color="action" />
           </IconWrapper>
         </Toolbar>
       </StyledAppBar>
