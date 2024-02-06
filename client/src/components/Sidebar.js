@@ -1,5 +1,6 @@
 import React from 'react'
 import { Drawer} from '@mui/material';
+import SidebarContent from './SidebarContent';
 
 function Sidebar() {
   return (
@@ -25,7 +26,7 @@ function Sidebar() {
           }
         }}
       >
-        hello
+        <SidebarContent />
       </Drawer> 
     </div>
   )
