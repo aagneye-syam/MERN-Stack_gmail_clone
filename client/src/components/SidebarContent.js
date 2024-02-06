@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, styled, List, ListItem } from "@mui/material";
 import CreateOutlined from "@mui/icons-material/Create";
 import SIDEBAR_DATA from "../config/Sidebar.config";
+import ComposeMail from "./ComposeMail";
 
 const ComposeButton = styled(Button)({
   background: "#c2e7ff",
@@ -34,13 +35,14 @@ function SidebarContent() {
           Compose
         </ComposeButton>
         <List>
-          {SIDEBAR_DATA.map((data) => (
+          {SIDEBAR_DATA.map(data => (
             <ListItem>
               <data.icon fontSize="small" />
               {data.title}
             </ListItem>
           ))}
         </List>
+        <ComposeMail />
       </Container>
     </div>
   );
