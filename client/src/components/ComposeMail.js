@@ -1,5 +1,6 @@
 import React from "react";
-import { Dialog } from "@mui/material";
+import { Box, Dialog,Typography,styled } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 
 const dialogStyle = {
   height: "90%",
@@ -10,12 +11,26 @@ const dialogStyle = {
   borderRadius: "10px 10px 0 0",
 };
 
+const Header = styled(Box)({
+  display:'flex'
+})
+
 function ComposeMail() {
   return (
     <div>
       <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
-        Hello
+        <Header>
+          <Typography>New Message</Typography>
+          <CloseIcon fontSize="small" />
+        </Header>
+        <Box>
+
+        </Box>
+        <Box>
+          Textarea
+        </Box>
       </Dialog>
+
     </div>
   );
 }
