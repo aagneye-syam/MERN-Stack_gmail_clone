@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Dialog, Typography, styled } from "@mui/material";
+import { Box, Dialog, InputBase, Typography, styled } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const dialogStyle = {
@@ -22,6 +22,17 @@ const Header = styled(Box)({
   },
 });
 
+const ToWrapper = styled(Box)({
+  display:'flex',
+  flexDirection:'column',
+  padding:'0 15px',
+  '& > div':{
+    fontSize: 14,
+    borderBottom: '1px solid #F5F5F5',
+    marginTop: 10,
+  }
+})
+
 function ComposeMail() {
   return (
     <div>
@@ -30,7 +41,10 @@ function ComposeMail() {
           <Typography>New Message</Typography>
           <CloseIcon fontSize="small" />
         </Header>
-        <Box></Box>
+        <ToWrapper>
+          <InputBase placeholder="To" />
+          <InputBase placeholder="Subject" />
+        </ToWrapper>
         <Box>Textarea</Box>
       </Dialog>
     </div>
