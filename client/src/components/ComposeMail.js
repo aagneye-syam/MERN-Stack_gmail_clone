@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import {
   Box,
@@ -60,6 +61,8 @@ const SendButton = styled(Button)({
 });
 
 function ComposeMail({ openDialog, setOpenDialog }) {
+  const [data,setData] = useState({});
+
   const config = {
     Host: "smtp.elasticemail.com",
     Username: "mernstack1234@yopmail.com",
@@ -73,7 +76,9 @@ function ComposeMail({ openDialog, setOpenDialog }) {
     setOpenDialog(false);
   };
 
-  const sendMail = () => {
+  const sendMail = (e) => {
+    e.preventDefault();
+
     if (window.Email) {
       window.Email.send({
         ...config,
@@ -86,6 +91,10 @@ function ComposeMail({ openDialog, setOpenDialog }) {
     setOpenDialog(false);
   };
 
+  const onValueChange = (e) => {
+    setData({...data, [e.target.name]: e.target.value})
+  }
+
   return (
     <div>
       <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
@@ -94,17 +103,19 @@ function ComposeMail({ openDialog, setOpenDialog }) {
           <CloseIcon fontSize="small" onClick={(e) => closeComposeMail(e)} />
         </Header>
         <ToWrapper>
-          <InputBase placeholder="To" />
-          <InputBase placeholder="Subject" />
+          <InputBase placeholder="To" name='to' onChange={(e) => onValueChange(e)} />
+          <InputBase placeholder="Subject" name="subject" onChange={(e) => onValueChange(e)} />
         </ToWrapper>
         <TextField
           multiline
           rows={20}
           variant="standard"
           InputProps={{ disableUnderline: true }}
+          onChange={(e) => onValueChange(e)}
+          name="body"
         />
         <Footer>
-          <SendButton onClick={() => sendMail()}>Send</SendButton>
+          <SendButton onClick={(e) => sendMail(e)}>Send</SendButton>
           <DeleteOutlineIcon onClick={() => setOpenDialog(false)} />
         </Footer>
       </Dialog>
