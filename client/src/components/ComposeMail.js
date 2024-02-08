@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Button,
   Dialog,
   InputBase,
   TextField,
@@ -8,6 +9,7 @@ import {
   styled,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';  
 
 const dialogStyle = {
   height: "90%",
@@ -40,6 +42,15 @@ const ToWrapper = styled(Box)({
   },
 });
 
+const Footer = styled(Box)({
+  display:'flex',
+  justifyContent:'space-between',
+  padding:'10px 15px',
+  alignItems:'center'
+
+})
+
+
 function ComposeMail() {
   return (
     <div>
@@ -58,6 +69,10 @@ function ComposeMail() {
           variant="standard"
           InputProps={{ disableUnderline: true }}
         />
+        <Footer>
+          <Button>Send</Button>
+          <DeleteOutlineIcon />
+        </Footer>
       </Dialog>
     </div>
   );
