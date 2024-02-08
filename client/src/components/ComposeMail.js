@@ -59,12 +59,15 @@ const SendButton = styled(Button)({
   width: 100,
 });
 
-function ComposeMail({openDialog,setOpenDialog}) {
-  
+function ComposeMail({ openDialog, setOpenDialog }) {
   const closeComposeMail = (e) => {
     e.preventDefault();
 
     setOpenDialog(false);
+  };
+
+  const sendMail = () => {
+    setOpenDialog(false)
   }
 
   return (
@@ -72,7 +75,7 @@ function ComposeMail({openDialog,setOpenDialog}) {
       <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
         <Header>
           <Typography>New Message</Typography>
-          <CloseIcon fontSize="small"  onClick={(e)=>closeComposeMail(e)} />
+          <CloseIcon fontSize="small" onClick={(e) => closeComposeMail(e)} />
         </Header>
         <ToWrapper>
           <InputBase placeholder="To" />
@@ -85,8 +88,8 @@ function ComposeMail({openDialog,setOpenDialog}) {
           InputProps={{ disableUnderline: true }}
         />
         <Footer>
-          <SendButton>Send</SendButton>
-          <DeleteOutlineIcon />
+          <SendButton onClick={()=>sendMail()}>Send</SendButton>
+          <DeleteOutlineIcon onClick={() => setOpenDialog(false)} />
         </Footer>
       </Dialog>
     </div>
