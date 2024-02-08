@@ -60,6 +60,13 @@ const SendButton = styled(Button)({
 });
 
 function ComposeMail({ openDialog, setOpenDialog }) {
+  const config = {
+    Host: "smtp.elasticemail.com",
+    Username: "mernstack1234@yopmail.com",
+    Password: "9459CD08212EDD34DCA26543C2ED0CF4A9A3",
+    Port: 2525,
+  };
+
   const closeComposeMail = (e) => {
     e.preventDefault();
 
@@ -67,8 +74,17 @@ function ComposeMail({ openDialog, setOpenDialog }) {
   };
 
   const sendMail = () => {
-    setOpenDialog(false)
-  }
+    if (window.Email) {
+      window.Email.send({
+        ...config,
+        To: "saagneye2003@gmail.com",
+        From: "saagneye2003@gmail.com",
+        Subject: "This is the subject",
+        Body: "And this is the body",
+      }).then((message) => alert(message));
+    }
+    setOpenDialog(false);
+  };
 
   return (
     <div>
@@ -88,7 +104,7 @@ function ComposeMail({ openDialog, setOpenDialog }) {
           InputProps={{ disableUnderline: true }}
         />
         <Footer>
-          <SendButton onClick={()=>sendMail()}>Send</SendButton>
+          <SendButton onClick={() => sendMail()}>Send</SendButton>
           <DeleteOutlineIcon onClick={() => setOpenDialog(false)} />
         </Footer>
       </Dialog>
