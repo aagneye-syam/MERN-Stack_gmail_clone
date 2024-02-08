@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Dialog, InputBase, Typography, styled } from "@mui/material";
+import { Box, Dialog, InputBase, TextField, Typography, styled } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+
 
 const dialogStyle = {
   height: "90%",
@@ -45,7 +46,7 @@ function ComposeMail() {
           <InputBase placeholder="To" />
           <InputBase placeholder="Subject" />
         </ToWrapper>
-        <Box>Textarea</Box>
+        <TextField />
       </Dialog>
     </div>
   );
