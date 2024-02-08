@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Box,
   Button,
@@ -58,10 +59,12 @@ const SendButton = styled(Button)({
   width: 100,
 });
 
-function ComposeMail() {
+function ComposeMail({openDialog}) {
+  
+
   return (
     <div>
-      <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
+      <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
         <Header>
           <Typography>New Message</Typography>
           <CloseIcon fontSize="small" />
