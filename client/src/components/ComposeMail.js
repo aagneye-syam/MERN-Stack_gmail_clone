@@ -82,10 +82,10 @@ function ComposeMail({ openDialog, setOpenDialog }) {
     if (window.Email) {
       window.Email.send({
         ...config,
-        To: "saagneye2003@gmail.com",
+        To: data.to,
         From: "saagneye2003@gmail.com",
-        Subject: "This is the subject",
-        Body: "And this is the body",
+        Subject: data.subject,
+        Body: data.body,
       }).then((message) => alert(message));
     }
     setOpenDialog(false);
