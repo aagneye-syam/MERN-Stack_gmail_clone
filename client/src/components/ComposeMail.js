@@ -1,7 +1,13 @@
 import React from "react";
-import { Box, Dialog, InputBase, TextField, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  InputBase,
+  TextField,
+  Typography,
+  styled,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
 
 const dialogStyle = {
   height: "90%",
@@ -24,15 +30,15 @@ const Header = styled(Box)({
 });
 
 const ToWrapper = styled(Box)({
-  display:'flex',
-  flexDirection:'column',
-  padding:'0 15px',
-  '& > div':{
+  display: "flex",
+  flexDirection: "column",
+  padding: "0 15px",
+  "& > div": {
     fontSize: 14,
-    borderBottom: '1px solid #F5F5F5',
+    borderBottom: "1px solid #F5F5F5",
     marginTop: 10,
-  }
-})
+  },
+});
 
 function ComposeMail() {
   return (
@@ -46,7 +52,12 @@ function ComposeMail() {
           <InputBase placeholder="To" />
           <InputBase placeholder="Subject" />
         </ToWrapper>
-        <TextField />
+        <TextField
+          multiline
+          rows={20}
+          variant="standard"
+          InputProps={{ disableUnderline: true }}
+        />
       </Dialog>
     </div>
   );
