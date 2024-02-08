@@ -9,7 +9,7 @@ import {
   styled,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';  
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const dialogStyle = {
   height: "90%",
@@ -43,13 +43,20 @@ const ToWrapper = styled(Box)({
 });
 
 const Footer = styled(Box)({
-  display:'flex',
-  justifyContent:'space-between',
-  padding:'10px 15px',
-  alignItems:'center'
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "10px 15px",
+  alignItems: "center",
+});
 
-})
-
+const SendButton = styled(Button)({
+  background: "#0B57D0",
+  color: "#fff",
+  borderRadius: 18,
+  fontWeight: 500,
+  textTransform: "none",
+  width: 100,
+});
 
 function ComposeMail() {
   return (
@@ -70,7 +77,7 @@ function ComposeMail() {
           InputProps={{ disableUnderline: true }}
         />
         <Footer>
-          <Button>Send</Button>
+          <SendButton>Send</SendButton>
           <DeleteOutlineIcon />
         </Footer>
       </Dialog>
