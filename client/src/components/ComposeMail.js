@@ -63,7 +63,7 @@ const SendButton = styled(Button)({
 });
 
 function ComposeMail({ openDialog, setOpenDialog }) {
-  const [data,setData] = useState({});
+  const [data, setData] = useState({});
   const sendEmailService = useApi(API_URLS.saveSendEmail);
 
   const config = {
@@ -91,12 +91,27 @@ function ComposeMail({ openDialog, setOpenDialog }) {
         Body: data.body,
       }).then((message) => alert(message));
     }
+
+    const payload = {
+      to: data.to,
+      from: "saagneye2003@gmail.com",
+      subject: data.subject,
+      body: data.body,
+      data: new Date(),
+      image: "",
+      name: "code for interview",
+      starred: "false",
+      type: "send",
+    };
+
+    sendEmailService.call(payload)
+
     setOpenDialog(false);
   };
 
   const onValueChange = (e) => {
-    setData({...data, [e.target.name]: e.target.value})
-  }
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
 
   return (
     <div>
@@ -106,8 +121,16 @@ function ComposeMail({ openDialog, setOpenDialog }) {
           <CloseIcon fontSize="small" onClick={(e) => closeComposeMail(e)} />
         </Header>
         <ToWrapper>
-          <InputBase placeholder="To" name='to' onChange={(e) => onValueChange(e)} />
-          <InputBase placeholder="Subject" name="subject" onChange={(e) => onValueChange(e)} />
+          <InputBase
+            placeholder="To"
+            name="to"
+            onChange={(e) => onValueChange(e)}
+          />
+          <InputBase
+            placeholder="Subject"
+            name="subject"
+            onChange={(e) => onValueChange(e)}
+          />
         </ToWrapper>
         <TextField
           multiline
