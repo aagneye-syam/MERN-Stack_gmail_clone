@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import useApi from "../hooks/useApi";
+import { API_URLS } from "../services/api.url";
 
 const dialogStyle = {
   height: "90%",
@@ -62,6 +64,7 @@ const SendButton = styled(Button)({
 
 function ComposeMail({ openDialog, setOpenDialog }) {
   const [data,setData] = useState({});
+  const sendEmailService = useApi(API_URLS.saveSendEmail);
 
   const config = {
     Host: "smtp.elasticemail.com",

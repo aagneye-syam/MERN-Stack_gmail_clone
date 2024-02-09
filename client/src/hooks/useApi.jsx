@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API_GMAIL as API } from "../services/api";
 
-const useApi = () => {
+const useApi = (urlObject) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(fasle);
@@ -12,7 +12,7 @@ const useApi = () => {
     setIsLoading(true);
 
     try {
-      let response = await API();
+      let res = await API(urlObject);
       setResponse(res.data);
     } catch (error) {
       setError(error.message);
