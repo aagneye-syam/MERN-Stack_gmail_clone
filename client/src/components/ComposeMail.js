@@ -106,6 +106,13 @@ function ComposeMail({ openDialog, setOpenDialog }) {
 
     sendEmailService.call(payload)
 
+    if(!sendEmailService.error){
+      setOpenDialog(false);
+      setData({});
+    }else{
+      
+    }
+
     setOpenDialog(false);
   };
 
