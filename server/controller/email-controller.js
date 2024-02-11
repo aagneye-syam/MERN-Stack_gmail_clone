@@ -1,5 +1,5 @@
 import { response } from "express";
-import Email from "../model/email";
+import Email from "../model/email.js";
 
 export const saveSendEmails = (req, res) => {
   try {
@@ -11,3 +11,5 @@ export const saveSendEmails = (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+export default saveSendEmails;
