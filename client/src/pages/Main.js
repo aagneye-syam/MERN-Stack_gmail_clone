@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import Emails from "../components/Emails";
+  
 
 const Main = () => {
   const [openDrawer,setOpenDrawer] = useState(true);
@@ -13,7 +15,7 @@ const Main = () => {
     <div>
       <Header toggleDrawer={toggleDrawer} />
       <Sidebar openDrawer={openDrawer} />
-      <div>Display Mail</div>
+      <Emails openDrawer={openDrawer} />
     </div>
   );
 };
