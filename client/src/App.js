@@ -4,7 +4,7 @@ import {Routes,Route, RouterProvider, createBrowserRouter, createRoutesFromEleme
 const router =createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="" element={} />
+      <Route path="inbox" element={} />
     </Route>
   )
 )
