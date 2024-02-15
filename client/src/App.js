@@ -1,4 +1,3 @@
-import Main from "./pages/Main";
 import {
   Route,
   RouterProvider,
@@ -20,6 +19,7 @@ const router = createBrowserRouter(
           element={<routes.main.element />}
         />
       </Route>
+      <Route path={routes.invalid.path} element={<Navigate to={`${routes.emails.path}/inbox`}/>} /> 
     </Route>
   )
 );
