@@ -6,15 +6,18 @@ const routes = {
     path: "/",
     element: Main,
   },
-  emails:{
-    path:'emails',
-    element:Emails
+  emails: {
+    path: "emails",
+    element: Emails,
   },
-  invalid:{
-    path:'/*',
-    element: Emails
-  }
+  invalid: {
+    path: "/*",
+    element: Emails,
+  },
+  view: {
+    path: "/view",
+    element: Emails,
+  },
 };
 
-export {routes};
-
+export { routes };

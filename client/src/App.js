@@ -18,6 +18,7 @@ const router = createBrowserRouter(
           path={`${routes.main.path}/:type`}
           element={<routes.main.element />}
         />
+        <Route path={routes.view.path} element={<routes.view.element/>}/>
       </Route>
       <Route path={routes.invalid.path} element={<Navigate to={`${routes.emails.path}/inbox`}/>} /> 
     </Route>
